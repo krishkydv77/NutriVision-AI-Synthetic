@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVision - AI Nutrition Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥗 NutriVision</h1>
+            <p>AI-Powered Food Recognition & Nutritional Analysis</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Left Side: Upload Panel -->
+            <section class="card upload-section">
+                <h2>Upload Food Image</h2>
+                <form id="uploadForm">
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <div class="drop-zone-text">
+                            <span class="icon">📷</span>
+                            <p>Click or Drag & Drop Image Here</p>
+                        </div>
+                        <img id="imagePreview" src="" alt="Preview" class="hidden">
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn">Analyze Nutrition</button>
+                </form>
+            </section>
+
+            <!-- Right Side: Results Dashboard -->
+            <section class="card result-section">
+                <h2>Nutritional Dashboard</h2>
+                
+                <div id="loader" class="loader hidden"></div>
+
+                <div id="results" class="results-content hidden">
+                    <div class="food-header">
+                        <h3 id="foodName">Apple</h3>
+                        <span id="confidence" class="badge">95% Match</span>
+                    </div>
+
+                    <div class="health-score-card">
+                        <span>Health Score</span>
+                        <div class="score" id="healthScore">9.2 / 10</div>
+                    </div>
+
+                    <div class="macros-grid">
+                        <div class="macro-box calories">
+                            <span class="val" id="calories">95</span>
+                            <span class="lbl">Calories (kcal)</span>
+                        </div>
+                        <div class="macro-box protein">
+                            <span class="val" id="protein">0.5g</span>
+                            <span class="lbl">Protein</span>
+                        </div>
+                        <div class="macro-box carbs">
+                            <span class="val" id="carbs">25g</span>
+                            <span class="lbl">Carbs</span>
+                        </div>
+                        <div class="macro-box fat">
+                            <span class="val" id="fat">0.3g</span>
+                            <span class="lbl">Fat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="placeholderText" class="placeholder">
+                    Upload an image to reveal detailed AI nutritional insights.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

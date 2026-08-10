@@ -1,0 +1,9 @@
+fastapi    ### framework of backend and frontend 
+uvicorn    ### server 
+tensorflow>=2.16.0   ###deep learning library 
+numpy   
+pandas 
+pillow    ### Image related capturing arrays 
+python-multipart  ### it is used fror handling post requests in fastapi 
+jinja2     ### it is used for showing text in frontend of backend api . 
+scikit-learn  

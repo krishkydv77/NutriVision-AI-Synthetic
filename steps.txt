@@ -1,0 +1,112 @@
+
+
+uv venv --> activate 
+
+requirements ---> Install 
+
+
+config folder ----> settings.py file 
+
+utils ----> (1). labels.py(it is used for classification) (2). helper.py(1-10) 
+
+training folder ----> 
+(1). data_loader.py ---> datacreate ---> using numpy  
+
+(2). train_ann.py  ---> It is used for training our generated data using ANN workflow. 
+
+
+(3). train_cnn.py  ----> Ot is used for training our generated image data using CNN workflow. 
+
+
+Now open the terminal and write :::: 
+
+python -m training.train_ann
+
+
+python -m training.train_cnn 
+
+
+Services folder ---> 
+
+(1). preprocessing.py ----> 
+
+Application ---> User photo/Image jpgor png format upload ---> 
+Http server listen ---> byte format , this is not an object ---> 
+library 'io' use ---> temporary memory save ---> bytes of image convert as an object ---> 'Pillow' library reads this image as an object . 
+
+Image ---> Array ----> Noralize ---> Resize(128,128) 
+
+(2). Nutrition_service.py -----> 
+
+User Image ---> it has 2 options :::: 
+(a). if there are any model available ---> Image predict 
+(b). if htere are not any model available ---> Image --> Nutrition D.B.
+
+(3). prediction_service.py ----> 
+
+It is combination of 3 files (helper.py, nutrition.py, labels.py) and it will
+return prediction information in JSON format . 
+
+uuid<random>.jpg 
+
+
+Now we will create routes folder and in this we will create 'predict.py'  ---> Define endpoints  
+
+Now we will create app.py for fastapi 
+
+Now we will create 'templates' folder for frontend ('index.html') 
+
+Now we will add style.css and script.js in static folder 
+
+
+Now open the terminal and write :::
+
+uvicorn app:app --reload
+
+
+----------------------------------------------------------------
+
+Now go to AWS ----> EC2 SERVER ----> open cli 
+
+
+
+
+
+sudo apt install docker.io -y
+
+sudo systemctl start docker
+
+sudo systemctl enable docker
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+
+git clone <repo>
+
+cd folder 
+
+docker build -t <docker_image_name> . 
+
+
+create docker image 
+
+docker build -t nutrivision-app .
+
+
+Run the docker image 
+
+docker run -d -p 8000:8000 --name nutrivision_container --restart always nutrivision-app
+
+
+
+EC2 ----> Security ---> Security group --> Edit Inbound Rules ---> Add Rules ---> 
+Custom TCP / PORT 8000 / 0.0.0.0/0
+
+
+Now save the rule 
+
+
+
+New tab of browser ---> <public_ip>:8000 

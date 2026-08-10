@@ -1,0 +1,17 @@
+[project]
+name = "food-neu"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "jinja2>=3.1.6",
+    "numpy>=2.5.1",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+    "python-multipart>=0.0.32",
+    "scikit-learn>=1.9.0",
+    "tensorflow>=2.16.0",
+    "uvicorn>=0.52.1",
+]
