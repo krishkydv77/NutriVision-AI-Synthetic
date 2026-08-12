@@ -1,4 +1,4 @@
- # NutriVision-AI
+ # NutriVision-AI-Synthetic
 
 ## AI-Powered Food & Nutrition Analyzer
 
